@@ -1,3 +1,87 @@
+# 🚀 Laravel VPS Ubuntu Deployment
+
+Laravel application dengan manual setup VPS + GitHub Actions untuk incremental updates.
+
+## 📋 Features
+
+- 🛠️ **Manual VPS Setup** - Full control over server configuration
+- 📁 **FileZilla Upload** - Manual file transfer untuk initial deployment
+- ⚡ **Smart Updates** - GitHub Actions hanya sync file yang berubah
+- 🔧 **Manual Migration** - Database migration manual untuk keamanan
+- 🎯 **Incremental Sync** - Seperti cpanel, hanya update yang diperlukan
+
+## 🚀 Quick Start
+
+### 1. Setup VPS Ubuntu
+Manual setup server dengan PHP 8.2, MySQL, Nginx
+
+### 2. Upload via FileZilla
+Transfer file Laravel ke `/var/www/laravel-app/`
+
+### 3. Configure GitHub Secrets
+- `VPS_HOST`: `123.123.123.12`
+- `VPS_USERNAME`: `root`
+- `VPS_PASSWORD`: `gatauu`
+
+### 4. Push for Updates
+Push ke `main` branch untuk sync incremental otomatis!
+
+## 📚 Complete Guide
+
+**📖 [VPS Setup & Deployment Guide](VPS-SETUP-GUIDE.md)**
+
+Panduan lengkap dari setup VPS sampai deployment:
+- Setup VPS Ubuntu Server
+- Install PHP, MySQL, Nginx
+- Configure Database
+- Upload files via FileZilla
+- Setup GitHub Actions
+- Daily operations
+
+## 🔄 How It Works
+
+### Initial Setup (Manual)
+1. **Setup VPS** - Install semua dependencies
+2. **Upload Files** - Via FileZilla ke server
+3. **Configure** - Database, .env, permissions
+
+### Updates (Automated)
+1. **Push code** ke main branch
+2. **GitHub Actions** sync hanya file yang berubah:
+   - `app/` - Application code
+   - `config/` - Configuration
+   - `resources/` - Views & assets
+   - `routes/` - Routes
+   - `database/migrations/` - Migrations
+3. **Manual migration** jika diperlukan
+
+## 🎯 What Gets Updated
+
+✅ **Synced by GitHub Actions:**
+- Application code (`app/`)
+- Configuration (`config/`)
+- Views & assets (`resources/`)
+- Routes (`routes/`)
+- Migrations (`database/migrations/`)
+
+🔒 **Stays on Server:**
+- Environment file (`.env`)
+- Vendor dependencies (`vendor/`)
+- Logs (`storage/logs/`)
+- User uploads (`storage/app/`)
+
+## 🏗️ Architecture
+
+```
+Local Development
+       ↓ (FileZilla - Initial)
+VPS Ubuntu Server (/var/www/laravel-app/)
+       ↑ (GitHub Actions - Updates)
+GitHub Repository
+```
+
+---
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
