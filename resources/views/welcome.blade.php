@@ -57,7 +57,7 @@
 
                     <!-- Fields for Task -->
                     <div class="form-group task-fields" id="taskFields" style="display: none;">
-                        <label for="projectSelect">Belongs to Project:</label>
+                        <label for="projectSelect">Project:</label>
                         <select id="projectSelect" name="project_id" class="form-control">
                             <option value="">Select Project</option>
                         </select>
@@ -68,12 +68,6 @@
                         <input type="number" id="weight" name="weight" class="form-control" min="1" value="1">
                     </div>
 
-                    <!-- Fields for Project -->
-                    <div class="form-group project-fields" id="projectFields">
-                        <label for="description">Description Progress (%):</label>
-                        <input type="number" id="description" name="description" class="form-control" min="0" max="100" value="0" readonly style="background-color: #f8f9fa; cursor: not-allowed;">
-                        <small class="form-text text-muted">Progress otomatis dihitung berdasarkan task yang selesai</small>
-                    </div>
 
                     <div class="form-actions">
                         <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>

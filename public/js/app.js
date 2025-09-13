@@ -303,10 +303,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="project-header">
                         <div class="project-info">
                             <span class="project-name">${project.name}</span>
-                            <small class="project-progress">Progress: ${project.description_progress}%</small>
+                            <div class="project-meta">
+                                <span class="status-badge status-${project.status}">${project.status.toUpperCase()}</span>
+                                <small class="project-progress">Progress: ${project.description_progress}%</small>
+                            </div>
                         </div>
-                        <div style="display: flex; gap: 5px; align-items: center;">
-                            <span class="status-badge status-${project.status}">${project.status.toUpperCase()}</span>
+                        <div class="project-actions">
                             <button class="btn-icon add-task-btn" data-project-id="${project.id}" title="Add Task to this Project">➕</button>
                             <button class="expand-btn" data-project="${project.id}">🔽</button>
                         </div>
@@ -390,7 +392,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('formType').value = 'project';
                 document.getElementById('name').value = project.name;
                 document.getElementById('status').value = project.status;
-                document.getElementById('description').value = project.description_progress;
                 
                 // Show form for editing
                 showForm('project', true);
@@ -467,10 +468,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="task-content">
                         <div class="task-info">
                             <span class="task-name">${task.name}</span>
-                            <small style="color: #666; margin-left: 10px;">Bobot: ${task.weight}</small>
-                        </div>
-                        <div class="task-actions">
-                            <span class="status-badge status-${task.status}">${task.status}</span>
+                            <div class="task-meta">
+                                <small class="task-weight">Bobot: ${task.weight}</small>
+                                <span class="status-badge status-${task.status}">${task.status.toUpperCase()}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
