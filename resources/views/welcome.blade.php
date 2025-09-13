@@ -26,8 +26,7 @@
             <!-- Welcome Message -->
             <div class="welcome-message" id="welcomeMessage">
                 <h1>Project Tracker</h1>
-                <p>Kelola project dan task Anda dengan mudah.<br>
-                Klik "Add Project" untuk membuat project baru atau "Add Task" untuk menambahkan task ke project yang sudah ada.</p>
+                <p>Kelola project dan task Anda dengan mudah.</p>
             </div>
 
             <!-- Form Container -->
